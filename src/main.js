@@ -236,7 +236,7 @@ document.getElementById('areas').innerHTML =
 // Photos de référence
 const refs = ['plan-etage.jpg', 'croquis-terrain.jpg', 'existant-facade-avant.jpg', 'existant-angle-droit.jpg', 'existant-arriere.jpg', 'existant-cote-droit.jpg', 'existant-facade-arriere.jpg', 'existant-arriere-droit-route.jpg', 'vue-satellite.webp'];
 document.getElementById('refs').innerHTML = refs
-  .map((f) => `<a href="/reference/${f}" target="_blank" title="${f}"><img src="/reference/${f}" alt="${f}" loading="lazy" /></a>`)
+  .map((f) => `<a href="reference/${f}" target="_blank" title="${f}"><img src="reference/${f}" alt="${f}" loading="lazy" /></a>`)
   .join('');
 
 apply();

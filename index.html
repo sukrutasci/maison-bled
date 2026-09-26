@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maison 3D — Projet</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <aside id="panel">
+      <header>
+        <h1>Maison 3D</h1>
+        <p class="sub">Sous-sol + RDC + étage · véranda fermée</p>
+      </header>
+
+      <section>
+        <h2>Scène</h2>
+        <div class="segmented" id="mode">
+          <button data-mode="existant">Existant</button>
+          <button data-mode="projet" class="active">Projet</button>
+          <button data-mode="comparaison">Comparer</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Coupe horizontale (1,20 m)</h2>
+        <div class="segmented" id="cut">
+          <button data-level="" class="active">Aucune</button>
+          <button data-level="0">RDC</button>
+          <button data-level="1">Étage</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Affichage</h2>
+        <label><input type="checkbox" id="opt-roof" checked /> Toiture &amp; plafond</label>
+        <label><input type="checkbox" id="opt-furniture" checked /> Mobilier</label>
+        <label><input type="checkbox" id="opt-labels" /> Noms des pièces</label>
+        <label><input type="checkbox" id="opt-env" checked /> Environnement (arbres, clôture)</label>
+        <label><input type="checkbox" id="opt-plot" checked /> Limites du terrain</label>
+      </section>
+
+      <section>
+        <h2>Soleil <output id="sun-out"></output></h2>
+        <input type="range" id="sun" min="6" max="20" step="0.25" />
+      </section>
+
+      <section>
+        <h2>Vues</h2>
+        <div class="grid-buttons" id="views">
+          <button data-view="facade">Façade</button>
+          <button data-view="entree">Entrée</button>
+          <button data-view="droite">Côté vallée</button>
+          <button data-view="arriere">Arrière</button>
+          <button data-view="dessus">Dessus</button>
+          <button data-view="interieur">Intérieur</button>
+        </div>
+        <h2 class="subhead">Pièces</h2>
+        <div class="grid-buttons" id="rooms">
+          <button data-view="cuisine">Cuisine</button>
+          <button data-view="cuisinePlan">Cuisine (plan)</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Surfaces (plan)</h2>
+        <table id="areas"></table>
+      </section>
+
+      <section>
+        <h2>Références</h2>
+        <div id="refs" class="refs"></div>
+      </section>
+    </aside>
+
+    <button id="panel-toggle" aria-label="Afficher / masquer le panneau">☰</button>
+    <div id="compass" title="Nord"><div id="compass-needle"><span>N</span></div></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
